@@ -3,12 +3,8 @@ from flask_cors import CORS
 from model import probe_model_5l_profit
 import json
 import os
-app = Flask(__name__, static_folder='../build', static_url_path='/')
+app = Flask(__name__)
 CORS(app)
-
-@app.route('/')
-def index():
-    return app.send_static_file('index.html')
 
 # Define route to update data
 @app.route('/update_data', methods=['POST'])
